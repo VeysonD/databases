@@ -2,52 +2,32 @@ DROP database IF EXISTS chat;
 
 CREATE DATABASE chat;
 
-
 USE chat;
 
 -- ---
 -- Table 'Users'
 --
 -- ---
-DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id INT NOT NULL AUTO_INCREMENT,
-  name VARCHAR(150) NOT NULL,
+  username VARCHAR(150) NOT NULL,
   PRIMARY KEY (id)
 );
 
 -- ---
--- Table 'room'
+-- Table 'messaes'
 --
 -- ---
 
-DROP TABLE IF EXISTS rooms;
-
-CREATE TABLE rooms (
-  id INT  NOT NULL AUTO_INCREMENT,
-  name VARCHAR(150) NOT NULL,
-  PRIMARY KEY (id)
-);
-
-DROP TABLE IF EXISTS messages;
 
 CREATE TABLE messages (
   id INT NOT NULL AUTO_INCREMENT,
+  userid INT NOT NULL,
   text VARCHAR(150) NOT NULL,
-  id_room INT,
-  id_user INT,
+  roomname VARCHAR(20) NOT NULL,
   PRIMARY KEY (id)
 );
-
-
-
-ALTER TABLE messages ADD FOREIGN KEY (id_room) REFERENCES rooms (id);
-ALTER TABLE messages ADD FOREIGN KEY (id_user) REFERENCES users (id);
-
-
-
-
 
 -- ---
 
@@ -74,11 +54,14 @@ room table
   //roomname
   //foreign
 
-objectId table (maybe)
-  //own id (primary key)
-  //user (foreign key)
-  //message (foreign key)
 
+  CREATE TABLE rooms (
+    id INT NOT NULL AUTO_INCREMENT,
+    name VARCHAR(150) NOT NULL,
+    PRIMARY KEY (id)
+  );
+
+  ADD FOREIGNS HERE and to table messages
 
 */
 

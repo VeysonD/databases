@@ -14,5 +14,7 @@ dbConnection.connect(function(err) {
   if (err) {
     throw err;
   }
-  console.log('Welcome to Sonic\s World');
+  console.log('Welcome to Sonics World');
 });
+
+module.exports = dbConnection;
