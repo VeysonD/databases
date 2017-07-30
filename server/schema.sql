@@ -23,9 +23,9 @@ CREATE TABLE users (
 
 CREATE TABLE messages (
   id INT NOT NULL AUTO_INCREMENT,
-  userid INT NOT NULL,
-  text VARCHAR(150) NOT NULL,
-  roomname VARCHAR(20) NOT NULL,
+  userid INT,
+  text VARCHAR(150) ,
+  roomname VARCHAR(20),
   PRIMARY KEY (id)
 );
 

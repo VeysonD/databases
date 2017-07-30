@@ -8,7 +8,6 @@ module.exports = {
     }, // a function which handles a get request for all messages
     post: function (req, res) {
       console.log('post messages controller test');
-      console.log('req.body', req.body);
 
       var inputContent = req.body.message;
       var inputRoom = req.body.roomname;
