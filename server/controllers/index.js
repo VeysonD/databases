@@ -14,27 +14,24 @@ module.exports = {
         res.json(data);
       });
 
-    }, // a function which handles a get request for all messages
+    },
     post: function (req, res) {
       console.log('post messages controller test');
-      //console.log('byebyebyebye');
 
       var inputContent = req.body.text;
       var inputRoom = req.body.roomname;
       var inputUsername = req.body.username;
-      //console.log('post messages message', req);
-      //
+
       console.log(req.body);
       console.log(req.body.username);
       models.messages.post(inputContent, inputRoom, inputUsername, function(err, data) {
         if (err) {
           throw err;
         }
-        //users.post
         res.sendStatus(201);
       });
 
-    } // a function which handles posting a message to the database
+    }
   },
 
   users: {
@@ -44,15 +41,14 @@ module.exports = {
           console.log('Controller users get error', err);
           throw err;
         }
-        //console.log('Controller users get data', data);
+
         res.json(data);
       });
 
     },
     post: function (req, res) {
-      //console.log('hihihihihihi');
-      //console.log('post user controller test');
-      console.log('Controller users post req', req.body);
+
+      console.log('post user controller test');
       var inputName = req.body.username;
       models.users.post(inputName, function(err, data) {
         if (err) {

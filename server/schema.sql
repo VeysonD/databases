@@ -1,5 +1,4 @@
 DROP database IF EXISTS chat;
-
 CREATE DATABASE chat;
 
 USE chat;
@@ -29,41 +28,6 @@ CREATE TABLE messages (
   PRIMARY KEY (id)
 );
 
--- ---
-
--- ---
-
--- ---
--- Table Properties
--- ---
-/* Create other tables and define schemas for them here! */
-
-/*
-user should have table,
-  //will have its own id (primary key);
-  //will have name
-  //foreign key to message id
-
-messages table
-  //own id (primary key);
-  //text (contents);
-  //foreign key to rooms;
-
-room table
-  //own id (primary key);
-  //roomname
-  //foreign
-
-
-  CREATE TABLE rooms (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(150) NOT NULL,
-    PRIMARY KEY (id)
-  );
-
-  ADD FOREIGNS HERE and to table messages
-
-*/
 
 
 /*  Execute this file from the command line by typing:
