@@ -23,7 +23,9 @@ module.exports = {
       var inputRoom = req.body.roomname;
       var inputUsername = req.body.username;
       //console.log('post messages message', req);
-
+      //
+      console.log(req.body);
+      console.log(req.body.username);
       models.messages.post(inputContent, inputRoom, inputUsername, function(err, data) {
         if (err) {
           throw err;

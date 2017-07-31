@@ -13,10 +13,21 @@ module.exports = {
     }, // a function which produces all the messages
     post: function(params, param2, param3, callback) {
         //INSERT INTO tails (name, color) VALUES ('Rick', 'Blue'),
-
+      console.log('param3 in models', param3);
       console.log('model post messages test');
-      var messageQuery = `insert into messages(text, roomname) values ('${params}', '${param2}')`;
-      //var messageQuery ="insert into messages(message) values ('" + params + "')";
+      //WARNING user query is only here because chatterbox is lame
+      //WARNING please remove the next few lines if you upgrade cbox.
+
+      var userQuery = `insert into users(username) values ('${param3}')`;
+      db.query(userQuery);
+
+      //END WARNING MESSAGE
+      //END WARNING MESSAGE
+
+      var messageQuery = `insert into messages(text, roomname, userid) values ('${params}', '${param2}', (select id from users where username='${param3}'limit 1))`;
+      //select username from users where
+      //
+      //    //var messageQuery ="insert into messages(message) values ('" + params + "')";
       //console.log('messageQuery', messageQuery);
       db.query(messageQuery, function(err, data) {
         callback(err, data);
