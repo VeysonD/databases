@@ -26,7 +26,7 @@ module.exports = {
 
   users: {
     get: function(callback) {
-      var userQuery = "select username from users";
+      var userQuery = 'select username from users';
       db.query(userQuery, function(err, data) {
         callback(err, data);
       });
